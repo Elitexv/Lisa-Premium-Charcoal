@@ -11,12 +11,12 @@
   --color-border: #ccd3dc;
   --color-text: #101828;
   --color-text-muted: #5c6472;
-  --color-primary: #1d4ed8;
-  --color-primary-dark: #1e3a8a;
+  --color-primary: #1a1a1a;
+  --color-primary-dark: #000000;
   --color-gold: #dc9c2e;
-  --color-navy: #0f172a;
-  --color-navy-alt: #1e293b;
-  --color-gradient: linear-gradient(135deg, #2563eb 0%, #1d4ed8 55%, #1e3a8a 100%);
+  --color-navy: #0d0d0d;
+  --color-navy-alt: #262626;
+  --color-gradient: linear-gradient(135deg, #3f3f3f 0%, #1a1a1a 55%, #000000 100%);
 
   --font-heading: 'Poppins', 'Segoe UI', sans-serif;
   --font-body: 'Inter', 'Segoe UI', sans-serif;
@@ -129,11 +129,11 @@ p { color: var(--color-text-muted); }
 .btn-primary {
   background: var(--color-gradient);
   color: #ffffff;
-  box-shadow: 0 8px 24px rgba(29, 78, 216, 0.28);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
 }
 
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(29, 78, 216, 0.38); }
-.btn-primary:active { transform: translateY(0) scale(0.97); box-shadow: 0 6px 16px rgba(29, 78, 216, 0.28); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); }
+.btn-primary:active { transform: translateY(0) scale(0.97); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22); }
 
 .btn-outline {
   background: transparent;
@@ -262,8 +262,8 @@ p { color: var(--color-text-muted); }
   position: relative;
   padding: clamp(64px, 12vw, 120px) 0 clamp(56px, 10vw, 90px);
   background:
-    radial-gradient(ellipse at 20% 0%, rgba(29, 78, 216, 0.07), transparent 55%),
-    radial-gradient(ellipse at 90% 20%, rgba(37, 99, 235, 0.05), transparent 45%),
+    radial-gradient(ellipse at 20% 0%, rgba(0, 0, 0, 0.06), transparent 55%),
+    radial-gradient(ellipse at 90% 20%, rgba(0, 0, 0, 0.04), transparent 45%),
     var(--color-bg);
   overflow: hidden;
 }
@@ -274,7 +274,7 @@ p { color: var(--color-text-muted); }
   inset: auto -10% -30% auto;
   width: 60%;
   height: 60%;
-  background: radial-gradient(circle, rgba(29, 78, 216, 0.05), transparent 70%);
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.04), transparent 70%);
   pointer-events: none;
 }
 
@@ -434,7 +434,7 @@ p { color: var(--color-text-muted); }
 
 .card:hover {
   transform: translateY(-4px);
-  border-color: rgba(29, 78, 216, 0.35);
+  border-color: rgba(0, 0, 0, 0.3);
   box-shadow: var(--shadow-md);
 }
 
@@ -568,6 +568,42 @@ p { color: var(--color-text-muted); }
   letter-spacing: 0.06em;
 }
 
+.gallery-tile.has-photo {
+  padding: 0;
+  border-style: solid;
+  align-items: stretch;
+  justify-content: flex-end;
+}
+
+.gallery-tile.has-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-tile.has-photo:hover img { transform: scale(1.05); }
+
+.gallery-tile.has-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.15) 45%, transparent 70%);
+}
+
+.gallery-tile.has-photo .gallery-caption {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 16px;
+  text-align: left;
+}
+
+.gallery-tile.has-photo .gallery-caption span { color: #ffffff; display: block; }
+.gallery-tile.has-photo .gallery-caption small { color: rgba(255, 255, 255, 0.75); opacity: 1; }
+
 /* ---------- Steps ---------- */
 .steps {
   display: grid;
@@ -602,7 +638,7 @@ p { color: var(--color-text-muted); }
   align-items: center;
   justify-content: center;
   margin-bottom: 16px;
-  box-shadow: 0 6px 18px rgba(29, 78, 216, 0.3);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
 .step h3 { margin-bottom: 8px; font-size: 1.05rem; }
@@ -648,7 +684,7 @@ p { color: var(--color-text-muted); }
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 100% 0%, rgba(37, 99, 235, 0.35), transparent 60%);
+  background: radial-gradient(ellipse at 100% 0%, rgba(220, 156, 46, 0.25), transparent 60%);
 }
 
 .cta-banner > * { position: relative; z-index: 1; }
@@ -783,7 +819,7 @@ p { color: var(--color-text-muted); }
 .page-header {
   padding: clamp(48px, 8vw, 80px) 0 40px;
   background:
-    radial-gradient(ellipse at 15% 0%, rgba(29, 78, 216, 0.06), transparent 55%),
+    radial-gradient(ellipse at 15% 0%, rgba(0, 0, 0, 0.05), transparent 55%),
     var(--color-bg);
   border-bottom: 1px solid var(--color-border);
 }
